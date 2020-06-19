@@ -8,7 +8,7 @@ while True:
     time.sleep(14400)
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
 
-    standingsURL = "https://index.sim-football.com/DSFLS22/"
+    standingsURL = "https://index.sim-football.com/DSFLS23/"
     standingsPage = req.get(standingsURL)
     doc = SimplifiedDoc(standingsPage)
     standingTable = doc.selects('table.Grid')
@@ -16,49 +16,49 @@ while True:
     standingHeaders = standingTable.selects("tr.alt")
     standinglist = standingTitles.tds.text
 
-    url = "http://sim-football.com/indexes/DSFLS22/LeaguePassingStats.html"
+    url = "https://index.sim-football.com/DSFLS23/LeaguePassingStats.html"
     page = requests.get(url, headers=headers)
     soup = BeautifulSoup(page.content, 'html.parser')
     tb = soup.find('table', class_='tablesorter')
     table_rows = tb.find_all("tr")
 
-    wrurl = "http://sim-football.com/indexes/DSFLS22/LeagueReceivingStats.html"
+    wrurl = "https://index.sim-football.com/DSFLS23/LeagueReceivingStats.html"
     wrpage = requests.get(wrurl, headers=headers)
     wrsoup = BeautifulSoup(wrpage.content, 'html.parser')
     wrtb = wrsoup.find('table', class_='tablesorter')
     wrtable_rows = wrtb.find_all("tr")
 
-    rburl = "http://sim-football.com/indexes/DSFLS22/LeagueRushingStats.html"
+    rburl = "https://index.sim-football.com/DSFLS23/LeagueRushingStats.html"
     rbpage = requests.get(rburl, headers=headers)
     rbsoup = BeautifulSoup(rbpage.content, 'html.parser')
     rbtb = rbsoup.find('table', class_='tablesorter')
     rbtable_rows = rbtb.find_all("tr")
 
-    dfurl = "http://sim-football.com/indexes/DSFLS22/LeagueDefensiveStats.html"
+    dfurl = "https://index.sim-football.com/DSFLS23/LeagueDefensiveStats.html"
     dfpage = requests.get(dfurl, headers=headers)
     dfsoup = BeautifulSoup(dfpage.content, 'html.parser')
     dftb = dfsoup.find('table', class_='tablesorter')
     dftable_rows = dftb.find_all("tr")
 
-    kurl = "http://sim-football.com/indexes/DSFLS22/LeagueKickingStats.html"
+    kurl = "https://index.sim-football.com/DSFLS23/LeagueKickingStats.html"
     kpage = requests.get(kurl, headers=headers)
     ksoup = BeautifulSoup(kpage.content, 'html.parser')
     ktb = ksoup.find('table', class_='tablesorter')
     ktable_rows = ktb.find_all("tr")
 
-    purl = "http://sim-football.com/indexes/DSFLS22/LeaguePuntingStats.html"
+    purl = "https://index.sim-football.com/DSFLS23/LeaguePuntingStats.html"
     ppage = requests.get(purl, headers=headers)
     psoup = BeautifulSoup(ppage.content, 'html.parser')
     ptb = psoup.find('table', class_='tablesorter')
     ptable_rows = ptb.find_all("tr")
 
-    olurl = "http://sim-football.com/indexes/DSFLS22/LeagueOffensiveLineStats.html"
+    olurl = "https://index.sim-football.com/DSFLS23/LeagueOffensiveLineStats.html"
     olpage = requests.get(olurl, headers=headers)
     olsoup = BeautifulSoup(olpage.content, 'html.parser')
     oltb = olsoup.find('table', class_='tablesorter')
     oltable_rows = oltb.find_all("tr")
 
-    rurl = "http://sim-football.com/indexes/DSFLS22/LeagueSpecialTeamsStats.html"
+    rurl = "https://index.sim-football.com/DSFLS23/LeagueSpecialTeamsStats.html"
     rpage = requests.get(rurl, headers=headers)
     rsoup = BeautifulSoup(rpage.content, 'html.parser')
     rtb = rsoup.find('table', class_='tablesorter')
